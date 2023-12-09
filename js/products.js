@@ -340,7 +340,7 @@ function toggleUserLockIcons() {
 // Function to redirect to login page
 function redirectToLogin() {
   // Replace 'login.html' with your actual login page URL
-  window.location.href = "login.html";
+  window.location.href = "../login.html";
 }
 
 lockIcon.addEventListener("click", redirectToLogin);

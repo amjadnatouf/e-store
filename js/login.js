@@ -35,13 +35,13 @@ loginForm.addEventListener("submit", function (event) {
 
     // User logged in, check if the current page is products.html
     const currentPage = window.location.pathname;
-    if (currentPage.includes("products.html")) {
+    if (currentPage.includes("../products.html")) {
       // If the current page is products.html, no action needed
       // You can add additional logic or functionality here if required
     } else {
       // Redirect to products page
       // localStorage.setItem("isAuthenticated", true);
-      window.location.href = "products.html"; // Replace with your products page URL
+      window.location.href = "../products.html"; // Replace with your products page URL
     }
   } else {
     // Show alert to login
