@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout</title>
+    <!-- Add this line inside the <head> section of your HTML -->
+    <link rel="icon" href="./images/icon.png" type="png" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <!-- Important Owl stylesheet -->
+
+    <!-- Default Theme -->
+    <link rel="stylesheet" href="./owl-carousel/owl.carousel.css" />
+    <link rel="stylesheet" href="./owl-carousel/owl.theme.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <style>
+      .total-price {
+        font-weight: bold;
+        font-size: 1.2em;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="#">Novo</a>
+        <ul
+          class="navbar-nav d-flex justify-content-between align-items-center flex-row"
+        >
+          <li class="nav-item">
+            <a
+              class="nav-link mr-3"
+              href="#"
+              data-toggle="modal"
+              data-target="#favModalCenter"
+              id="favIcon"
+            >
+              <i class="far fa-heart fa-lg position-relative">
+                <span class="badge badge-primary" id="favBadge">0</span>
+              </i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link mr-3"
+              href="#"
+              data-toggle="modal"
+              data-target="#cartModalCenter"
+              id="cartIcon"
+            >
+              <i class="fas fa-shopping-cart fa-lg position-relative">
+                <span class="badge badge-primary" id="cartBadge">0</span>
+              </i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <span class="navbar-nav position-relative">
+              <span class="nav-item">
+                <a class="nav-link" href="#" id="lockIcon" style="display: none"
+                  ><i class="fas fa-lock fa-lg"></i
+                ></a>
+                <!-- Show lock icon when not logged in -->
+                <a class="nav-link" href="#" id="userIcon" style="display: none"
+                  ><i class="fas fa-user fa-lg" id="userDropdownBtn"></i
+                ></a>
+                <!-- Show user icon when logged in -->
+                <div class="position-relative">
+                  <div
+                    class="dropdown-menu position-absolute"
+                    id="userDropdown"
+                    style="display: none; left: -125px; z-index: 1000"
+                  >
+                    <!-- Dropdown menu for logged-in user -->
+                    <a class="dropdown-item" href="#" id="userName"
+                      >User Name</a
+                    >
+                    <a class="dropdown-item" href="#" id="userEmail">Email</a>
+                    <a class="dropdown-item" href="#" id="deleteAccountBtn"
+                      >Delete Account</a
+                    >
+                    <a class="dropdown-item" href="#" id="logoutBtn">Log Out</a>
+                  </div>
+                  <div
+                    class="overlay"
+                    id="overlay"
+                    style="
+                      display: none;
+                      position: fixed;
+                      top: 0;
+                      left: 0;
+                      width: 100%;
+                      height: 100%;
+                      background-color: rgba(0, 0, 0, 0.5);
+                      z-index: 999;
+                    "
+                  ></div>
+                  <!-- Overlay to close dropdown when clicked outside -->
+                </div>
+              </span>
+            </span>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container">
+      <h1 class="mt-4 mb-4">Checkout</h1>
+
+      <h2>Cart</h2>
+      <div id="cartItems" class="row">
+        <!-- Display Cart Items -->
+      </div>
+      <div id="cartTotal" class="total-price text-right">
+        Total: $<span id="totalAmount">0.00</span>
+      </div>
+
+      <h2 class="mt-4">Favorites</h2>
+      <!-- <div id="favItems" class="row"> -->
+      <!-- Display Favorite Items -->
+      <!-- </div> -->
+      <div id="owl-example" class="owl-carousel">
+        <!-- Display Favorite Items -->
+      </div>
+    </div>
+
+    <!--Favorit Modal -->
+    <div
+      class="modal fade"
+      id="favModalCenter"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalCenterTitle"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Your Favorit</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">Add Some Favorit Items!</div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Checkout
+            </button>
+            <button type="button" class="btn btn-primary" id="fav-shopping">
+              Go Shopping
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cart Modal -->
+    <div
+      class="modal fade"
+      id="cartModalCenter"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalCenterTitle"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Your Cart</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">Your Cart Is Empty</div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Checkout
+            </button>
+            <button type="button" class="btn btn-primary" id="cart-shopping">
+              Continue Shopping
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--  jQuery 1.7+  -->
+
+    <!-- Include js plugin -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="./assets/js/jquery-1.9.1.min.js"></script>
+    <script src="./owl-carousel/owl.carousel.js"></script>
+    <script src="./js/products.js"></script>
+    <script src="./js/checkout.js"></script>
+  </body>
+</html>
