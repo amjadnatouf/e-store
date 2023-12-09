@@ -48,7 +48,9 @@ btnRegister.addEventListener("submit", function (event) {
     // If no data exists, create a new array and store the user data
     localStorage.setItem("usersData", JSON.stringify([userData]));
   }
+  console.log("first", window.location);
 
   alert("User registered successfully!");
-  window.location.href = "login.html";
+  console.log(window.location);
+  window.location.href = "../login.html";
 });
