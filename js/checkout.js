@@ -62,9 +62,9 @@ document.addEventListener("click", function (event) {
 const cartShopping = document.getElementById("cart-shopping");
 const favShopping = document.getElementById("fav-shopping");
 cartShopping.addEventListener("click", () => {
-  window.location.href = "../products.html";
+  window.location.href = "products.html";
 });
 
 favShopping.addEventListener("click", () => {
-  window.location.href = "../products.html";
+  window.location.href = "products.html";
 });

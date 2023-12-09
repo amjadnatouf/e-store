@@ -50,5 +50,5 @@ btnRegister.addEventListener("submit", function (event) {
   }
 
   alert("User registered successfully!");
-  window.location.href = "../login.html";
+  window.location.href = "login.html";
 });

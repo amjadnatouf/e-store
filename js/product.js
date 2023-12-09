@@ -281,9 +281,9 @@ document.addEventListener("click", function (event) {
 const cartCheckout = document.getElementById("cart-checkout");
 const favCheckout = document.getElementById("fav-checkout");
 cartCheckout.addEventListener("click", () => {
-  window.location.href = "../checkout.html";
+  window.location.href = "checkout.html";
 });
 
 favCheckout.addEventListener("click", () => {
-  window.location.href = "../checkout.html";
+  window.location.href = "checkout.html";
 });

@@ -41,7 +41,7 @@ loginForm.addEventListener("submit", function (event) {
     } else {
       // Redirect to products page
       // localStorage.setItem("isAuthenticated", true);
-      window.location.href = "../products.html"; // Replace with your products page URL
+      window.location.href = "products.html"; // Replace with your products page URL
     }
   } else {
     // Show alert to login
